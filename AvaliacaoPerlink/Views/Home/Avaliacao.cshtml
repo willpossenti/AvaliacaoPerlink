@@ -1,0 +1,25 @@
+﻿@model AvaliacaoPerlink.Models.Avaliacao;
+
+@{
+    ViewData["Title"] = "Avaliacao";
+
+}
+
+
+<h3>Números Felizes e Sortudos</h3>
+@using (Html.BeginForm("Descobrir", "Home", FormMethod.Post))
+{
+    <div class="form-group row">
+        <div class="col-xs-2">
+            @Html.TextBoxFor(model => model.numero, new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(model => model.numero)
+        </div>
+        <div class="col-xs-2">
+            <button type="submit" class="btn btn-primary" id="btnDescobrir">Descobrir</button>
+        </div>
+        <br />
+        <br />
+
+    </div>
+    <h4>Resultado: @Html.DisplayFor(model => model.mensagem) </h4>
+}
